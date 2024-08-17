@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Институт региональных экономических исследований</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <script>
         function updateTime() {
             fetch('/get_time_data/')
@@ -19,155 +20,12 @@
         setInterval(updateTime, 1000); // Обновление каждую минуту
         window.onload = updateTime; // Обновление при загрузке страницы
     </script>
-    <style>
-        .main-banner{
-            width: 100%;
-            box-sizing: border-box;
-        }
-        .main-banner .container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: nowrap;
-            align-items: center;
-            box-sizing: border-box;
-            margin-left: 100px;
-            margin-right: 100px;
-        }
-        .logo--wrap, .info_date, .frame_time {
-            flex: 0 0 auto; /* Отключает изменение размеров элементов */
-            margin: 10px;
-        }
-        .main-banner .logo {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            /* margin-left: 20vh; */
-        }
-
-        .main-banner .logo .title_logo {
-            font-size: 20pt;
-            text-decoration: none !important;
-            margin-left: 2vh;
-        }
-
-        .main-banner .image_logo {
-            width: 15vh;
-        }
-
-        /* .main-banner .info_date {
-            margin-left: 25vh;
-        } */
-
-        .main-banner .frame_time {
-            /* margin-left: 25vh; */
-            border-width: 3px;
-            border-color: rgb(207, 207, 207);
-            border-style: solid; /* Добавьте это, чтобы рамка была видимой */
-            border-radius: 35px; /* Это сделает рамку круглой */
-        }
-
-        .main-banner .current_time {
-            /* padding: 2vh; */
-            font-size: 20pt;
-            color: black;
-            padding: 10px;
-        }
-
-        .main-banner .current_date {
-            font-size: 15pt;
-        }
-
-        .main-banner .current_day {
-            font-size: 12pt;
-            color: rgb(63, 63, 63);
-            opacity: 85%;
-        }
-        .nav-menu {
-            width: 100%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        .nav-menu .container {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: nowrap;
-            align-items: center;
-            box-sizing: border-box;
-            margin-left: 100px;
-            margin-right: 100px;
-            background-color: #fff;
-            
-        }
-        .nav-menu_list {
-            list-style: none;
-            display: flex;
-            align-items: center;
-        }
-        .nav-menu_item {
-            position: relative;
-            color: initial; /* Начальный цвет текста */
-            text-decoration: none; /* Убирает стандартное подчеркивание */
-        }
-
-        .nav-menu_item:hover {
-            color: #780121; /* Цвет текста при наведении */
-        }
-
-        .nav-menu_item::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px; /* Высота линии */
-            bottom: -2px; /* Позиция линии под текстом */
-            left: 0;
-            background-color: #780121; /* Цвет линии */
-            transform: scaleX(0); /* Начальное состояние линии */
-            transition: transform 0.3s ease; /* Анимация появления линии */
-        }
-
-        .nav-menu_item:hover::after {
-            transform: scaleX(1); /* Линия появляется при наведении */
-        }
-
-        .nav-menu_item a {
-            display: block;
-            padding: 15px 20px;
-            text-decoration: none;
-            color: #000000;
-        }
-
-        .nav-menu_item:hover .nav-menu_dropdown-container {
-            display: block;
-        }
-
-        .nav-menu_dropdown-container {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background-color: #780121;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        .nav-menu_dropdown-list {
-            color: black;
-            width: 100%;
-        }
-        
-        .nav-menu_dropdown-item {
-            list-style-type: none;
-            color: inherit;
-        }
-    </style>
+    <style></style>
 </head>
 <body>
     <header>
-        <div class="main-banner">
-            <div class="container">
-
+        <div class="container">
+            <div class="main-banner">
                 <div class="logo--wrap">
                     <!-- #780121 color of logo -->
                     <a href="#" class="logo">
@@ -231,7 +89,7 @@
                         </div>
                     </li>
                     <li class="nav-menu_item">
-                        <a href="#"> АСПИРАНТУРА</a>
+                        <a href="#">АСПИРАНТУРА</a>
                         <div class="nav-menu_dropdown-container">
                             <div class="container">
                                 <ul class="nav-menu_dropdown-list">
@@ -279,11 +137,42 @@
         </div>
 
 
-
+    </header>
     <footer>
-        <div class="contact-info">
-            <p>г. Москва, тел.: (495) 547-51-51</p>
-            <p>Email: info@rosstat.gov.ru</p>
+        <div class="container">
+            <div class="nav-footer">
+                <label class="nav-footer_links-title">Основные разделы сайта</label>
+                <div class="nav-footer_links">
+                    <ul class="nav-footer_column">
+                        <li class="nav-footer_column-item">ОБ ИНСТИТУТЕ</li>
+                        <li class="nav-footer_column-item">НАУЧНАЯ ДЕЯТЕЛЬНОСТЬ</li>
+                        <li class="nav-footer_column-item">ДИССЕРТАЦИОННЫЙ СОВЕТ</li>
+                        <li class="nav-footer_column-item">АСПИРАНТУРА</li>
+                    </ul>
+
+                    <ul class="nav-footer_column">
+                        <li class="nav-footer_column-item">СЕРТИФИКАЦИЯ</li>
+                        <li class="nav-footer_column-item">ЦЕЛЕВОЙ ИНСТРУКТАЖ</li>
+                        <li class="nav-footer_column-item">КОНТАКТЫ</li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="footer_contact-info">
+                <label class="footer_links-title">Контакты</label>
+
+                <div class="footer_contact-column">
+                    <div class="footer_contact-item">г. Москва, тел.: (495) 547-51-51</div>
+                    <div class="footer_contact-item">Email: info@rosstat.gov.ru</div>
+                </div>
+
+                <div class="footer_contact-column">
+                    <div class="footer_contact-item">г. Москва, тел.: (495) 547-51-51</div>
+                    <div class="footer_contact-item">Email: info@rosstat.gov.ru</div>
+                </div>
+
+            </div>
         </div>
     </footer>
     
