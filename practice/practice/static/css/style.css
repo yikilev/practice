@@ -1,3 +1,14 @@
+            
+            body {
+                font-family: 'PT Sans', sans-serif;
+                font-size: 16px;
+                letter-spacing: .3px;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                margin: 0;
+            }
+
             .container {
                 max-width: 1280px;
                 padding: 0 20px;
@@ -88,7 +99,6 @@
                 justify-content: space-between;
                 padding: 0;
                 list-style: none;
-                margin-top: 100px;
             }
 
 
@@ -130,7 +140,6 @@
             .nav-menu_item:hover .nav-menu_dropdown-container{
                 display: block;
                 font-size: 20pt;
-                min-height: 150px;
             }
 
             .nav-menu_dropdown-list {
@@ -146,23 +155,60 @@
                 margin: 5px;
             }
 
+            .main-footer {
+                width: 100%;
+                background-color: #f5f5f5;
+                padding: 20px 0 20px 0;
+                margin-top: auto;
+            }
+
+            .nav-footer {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
 
             .nav-footer .nav-footer_links-title {
                 font-size: 20px;
                 font-weight: bold;
+                color: #2c3756;
             }
 
             .nav-footer_links {
+                margin-top: 10px;
                 display: flex;
             }
 
+            .nav-footer_columns {
+                display: flex;
+                width: 350px;
+            }
+
+            .nav-footer_column {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .nav-footer_column-item a{
+                font-size: 16px;
+                text-decoration: none;
+                color: #000;
+            }
+
             .footer_contact-info {
+                margin-top: 10px;
                 display: flex;
                 justify-content: space-between;
                 flex-direction: row;
             }
 
             .footer_links-title {
+                color: #2c3756;
                 font-size: 20px;
                 font-weight: bold;
+            }
+
+            main {
+                min-height: 400px; /* или другая подходящая высота */
             }
