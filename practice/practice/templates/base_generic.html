@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Институт региональных экономических исследований</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main_page_style.css' %}">
     <script>
         function updateTime() {
             fetch('/get_time_data/')
@@ -24,6 +25,7 @@
 </head>
 <body>
     <header>
+        {% block header %}
         <div class="container">
             <div class="main-banner">
                 <div class="logo--wrap">
@@ -126,7 +128,7 @@
                                     <li class="nav-menu_dropdown-item">Консультации</li>
                                     <li class="nav-menu_dropdown-item">Заявка и договор</li>
                                 </ul>
-                            </div>
+                            </div> 
                         </div>
                     </li>
                     <li class="nav-menu_item">
@@ -135,12 +137,21 @@
                 </ul>
             </div>
         </div>
-
-
+        {% endblock %}
     </header>
 
+    <main>
+        <div class="main-body">
+            <div class="container">
+                {% block content %}
+                <!-- Main content goes here -->
+                {% endblock %}
+            </div>
+        </div>
+    </main>
 
     <footer>
+        {% block footer %}
         <div class="main-footer">
             <div class="container">
                 <div class="nav-footer">
@@ -193,6 +204,7 @@
                 </div>
             </div>
         </div>
+        {% endblock %}
     </footer>
     
 </body>
