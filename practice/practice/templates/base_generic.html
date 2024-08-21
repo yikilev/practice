@@ -30,7 +30,7 @@
             <div class="main-banner">
                 <div class="logo--wrap">
                     <!-- #780121 color of logo -->
-                    <a href="#" class="logo">
+                    <a href="{% url 'main_page' %}" class="logo">
                         <img src="{% static 'img_logo_2.png' %}" alt="Логотип" class="image_logo">
                         <div class="text_logo">
                             <div class="title_logo">Институт региональных<br>экономических исследований</div>
@@ -58,7 +58,9 @@
                         <div class="nav-menu_dropdown-container">
                             <div class="container">
                                 <ul class="nav-menu_dropdown-list">
-                                    <li class="nav-menu_dropdown-item">История института</li>
+                                    <li class="nav-menu_dropdown-item">
+                                        <a href="{% url 'main_page' %}">История института</a>
+                                    </li>
                                     <li class="nav-menu_dropdown-item">Руководство</li>
                                 </ul>
                             </div>
