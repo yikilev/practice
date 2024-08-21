@@ -1,37 +1,46 @@
 {% extends 'base_generic.html' %}
-
+{% load static %}
 {% block title %}Profile{% endblock %}
+
+{% block links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main_page_style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/slick.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/slick-theme.css' %}"/>
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/slick.min.js' %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.news-slider').slick({
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                dots: true,
+                arrows: true,
+                draggable: false
+            });
+        });
+    </script>
+{% endblock %}
 
 {% block content %}
 
-<div class="main-news">
-    <div class="main-title">Наши новости</div>
-    {% for new in news_list %}
-        <div class="news-item">
-            <h2>{{ new.title }}</h2>
-            <p>{{ new.date|date:"d.m.Y" }}</p>
-            <img src="{{ new.photo }}" alt="News Photo">
-            <p>{{ new.short_text }}</p>
+    <div class="main-news">
+        <div class="main-title">Наши новости</div>
+        <div class="news-slider">
+            {% for new in news_list %}
+                <div class="news-item">
+                    <img src="{{ MEDIA_URL }}{{ new.photo }}" alt="News Photo">
+                    <p>{{ new.date|date:"d.m.Y" }}</p>
+                    <a href="">
+                        <h3>{{ new.title }}</h3>
+                    </a>
+                    <p>{{ new.short_text }}</p>
+                </div>
+            {% endfor %}
         </div>
-    {% endfor %}
-</div>
+    </div>
 
-<div class="pagination">
-    <span class="step-links">
-        {% if page_obj.has_previous %}
-            <a href="?page=1">&laquo; первая</a>
-            <a href="?page={{ page_obj.previous_page_number }}">предыдущая</a>
-        {% endif %}
-
-        <span class="current">
-            Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
-        </span>
-
-        {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">следующая</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}">последняя &raquo;</a>
-        {% endif %}
-    </span>
-</div>
 
 {% endblock %}

@@ -4,22 +4,19 @@ import locale
 from django.http import JsonResponse
 import pytz
 from .models import Note
-from django.core.paginator import Paginator
+from django.conf import settings
 
 def main_page(request):
     locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
     tz = pytz.timezone('Europe/Moscow')
     current_time = datetime.now(tz)
     news_list = Note.objects.all()
-    paginator = Paginator(news_list, 4)
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
     context = {
         'current_day': current_time.strftime("%A"),
         'current_date': current_time.strftime("%d %B %Y"),
         'current_time': current_time.strftime("%H : %M : %S"),
         'news_list': news_list,
-        'page_obj': page_obj
+        'MEDIA_URL': settings.MEDIA_URL
     }
     return render(request, 'main_page.html', context)
 

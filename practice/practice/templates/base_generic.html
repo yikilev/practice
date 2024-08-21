@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Институт региональных экономических исследований</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main_page_style.css' %}">
+    {% block links %}{% endblock %}
     <script>
         function updateTime() {
             fetch('/get_time_data/')
@@ -21,10 +21,10 @@
         setInterval(updateTime, 1000); // Обновление каждую минуту
         window.onload = updateTime; // Обновление при загрузке страницы
     </script>
-    <style></style>
 </head>
 <body>
     <header>
+        {% block scripts %}{% endblock %}
         {% block header %}
         <div class="container">
             <div class="main-banner">
