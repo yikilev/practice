@@ -21,6 +21,7 @@
         setInterval(updateTime, 1000); // Обновление каждую минуту
         window.onload = updateTime; // Обновление при загрузке страницы
     </script>
+    <!-- 165px * 30px; 260px * 30px -->
 </head>
 <body>
     <header>
@@ -134,7 +135,7 @@
                         </div>
                     </li>
                     <li class="nav-menu_item">
-                        <a href="#">КОНТАКТЫ</a>
+                        <a href="{% url 'contacts_page' %}">КОНТАКТЫ</a>
                     </li>
                 </ul>
             </div>

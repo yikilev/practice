@@ -1,0 +1,18 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+
+{% block links %}
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=403f644f-4840-426e-b2df-bea42d662d87&lang=ru_RU" type="text/javascript"></script>
+    <script type="text/javascript" src="{% static 'js/map.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+    <div id="map" style="min-height: 600px"></div>
+
+{% endblock %}

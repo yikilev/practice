@@ -1,16 +1,27 @@
 .main-news {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+}
+
+.main-news-title {
+    color: #2C3756;
+    font-size: 32px;
 }
 
 
 .news-item {
+    width: 300px;
+    height: 470px;
     border: 1px solid #ddd;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     width: 25%; /* Четыре элемента на слайдер */
     text-align: center;
+    
 }
 
 .news-item img {
@@ -47,7 +58,8 @@
 
 .news-slider {  
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .news-item h3, .news-item p {

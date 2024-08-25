@@ -1,6 +1,6 @@
 {% extends 'base_generic.html' %}
 {% load static %}
-{% block title %}Profile{% endblock %}
+{% block title %}Новость{% endblock %}
 
 {% block links %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/main_page_style.css' %}">
@@ -26,21 +26,21 @@
 
 {% block content %}
 
-<div class="main-news">
-    <div class="main-news-title">Наши новости</div>
-    <div class="news-slider">
-        {% for new in news_list %}
-            <div class="news-item">
-                <img src="{{ MEDIA_URL }}{{ new.photo }}" alt="News Photo">
-                <p>{{ new.date|date:"d.m.Y" }}</p>
-                <a href="">
-                    <h3>{{ new.title }}</h3>
-                </a>
-                <p>{{ new.short_text }}</p>
-            </div>
-        {% endfor %}
+    <div class="main-news">
+        <div class="main-news-title">Наши новости</div>
+        <div class="news-slider">
+            {% for new in news_list %}
+                <div class="news-item">
+                    <img src="{{ MEDIA_URL }}{{ new.photo }}" alt="News Photo">
+                    <p>{{ new.date|date:"d.m.Y" }}</p>
+                    <a href="">
+                        <h3>{{ new.title }}</h3>
+                    </a>
+                    <p>{{ new.short_text }}</p>
+                </div>
+            {% endfor %}
+        </div>
     </div>
-</div>
 
 
 {% endblock %}
